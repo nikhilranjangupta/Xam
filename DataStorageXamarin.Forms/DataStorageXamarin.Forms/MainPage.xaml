@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customViews="clr-namespace:DataStorageXamarin.Forms.CustomViews"
+             x:Class="DataStorageXamarin.Forms.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="CenterAndExpand">
+
+            <Label x:Name="Path"></Label>
+
+            <ActivityIndicator x:Name="ActInd" IsVisible="False"></ActivityIndicator>
+            <customViews:BasicFormView
+                x:Name="SettingsFormView"
+                IsVisible="True"
+                LabelText1="Enter IP"
+                EntryPlaceHolder1="IP"
+                LabelText2="Enter Port"
+                EntryPlaceHolder2="Port"
+                HeadingOfForm="Enter Settings"
+                RightButtonText="Save"
+                LeftButtonText="Cancel"
+                EntryText1="{Binding Ip, Mode=TwoWay}"
+                EntryText2="{Binding Port, Mode=TwoWay}"
+                RightButtonClicked="OnRightButtonClicked"
+                LeftButtonClicked="OnLeftButtonClicked">
+            </customViews:BasicFormView>
+
+            <!--<customViews:BasicFormView
+                IsVisible="True"
+            x:Name="LoginFormView"
+            LabelText1="Enter Login ID"
+            EntryPlaceHolder1="Login ID"
+            LabelText2="Enter Password"
+            EntryPlaceHolder2="Password"
+            HeadingOfForm="Enter Login Credentials"
+            RightButtonText="Login"
+            LeftButtonText="Cancel"
+            RightButtonClicked="OnLoginClicked"
+            LeftButtonClicked="OnCancelClicked">
+            </customViews:BasicFormView>-->
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

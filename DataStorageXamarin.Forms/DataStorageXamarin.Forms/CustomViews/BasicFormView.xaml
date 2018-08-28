@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataStorageXamarin.Forms.CustomViews.BasicFormView">
+    <ContentView.Content>
+
+        <Frame 
+            x:Name="OuterFrams"
+            HasShadow="False"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            CornerRadius="2" 
+            OutlineColor="Black">
+            <Grid 
+                RowSpacing="3"
+                ColumnSpacing="3"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label x:Name="HeadingLabel" 
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{Binding HeadingOfForm}"
+                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                <Label 
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center"
+                    x:Name="LabelField1" 
+                       Text="{Binding LabelText1}"
+                       Grid.Row="1" Grid.Column="0"/>
+                <Entry
+                        Grid.Row="1" Grid.Column="1"
+                        VerticalOptions="Center"
+                        x:Name="EntryField1" 
+                       Placeholder="{Binding EntryPlaceHolder1}"
+                    Text="{Binding EntryText1, Mode=TwoWay}"
+                       ></Entry>
+                <Label 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    x:Name="LabelField2" 
+                       Text="{Binding LabelText2}"
+                       Grid.Row="2" Grid.Column="0"/>
+                <Entry 
+                        Grid.Row="2" Grid.Column="1"
+                        VerticalOptions="Center"
+                        x:Name="EntryField2" 
+                        Placeholder="{Binding EntryPlaceHolder2}"
+                    Text="{Binding EntryText2, Mode=TwoWay}"
+                       ></Entry>
+                <Button
+                    Command="{Binding LeftButtonCommand}"
+                    VerticalOptions="Center"
+                    x:Name="Cancel" Text="{Binding LeftButtonText}"
+                        Grid.Row="3" Grid.Column="0"
+                        HorizontalOptions="Center">
+                </Button>
+                <Button 
+                    Command="{Binding RightButtonCommand}"
+                    VerticalOptions="Center"
+                    x:Name="Save" Text="{Binding RightButtonText}"
+                        Grid.Row="3" Grid.Column="1"
+                        HorizontalOptions="Center">
+                </Button>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
